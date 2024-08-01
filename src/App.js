@@ -10,7 +10,6 @@ function App() {
   const [billAmount, setBillAmount] = useState(0);
   const [yourServiceQuality, setYourServiceQuality] = useState(0);
   const [friendServiceQuality, setFriendServiceQuality] = useState(0);
-  const [totalPayAmount, setTotalPayAmount] = useState(0);
 
   return (
     <div className="App">
@@ -24,17 +23,19 @@ function App() {
         setFriendServiceQuality={setFriendServiceQuality}
       />
       <TotalPay
-        totalPayAmount={totalPayAmount}
-        setTotalPayAmount={setTotalPayAmount}
+        billAmount={billAmount}
+        yourServiceQuality={yourServiceQuality}
+        friendServiceQuality={friendServiceQuality}
       />
       <ResetButton
         setBillAmount={setBillAmount}
         setYourServiceQuality={setYourServiceQuality}
         setFriendServiceQuality={setFriendServiceQuality}
-        setTotalPayAmount={setTotalPayAmount}
       />
     </div>
   );
 }
+
+console.log(BillAmount);
 
 export default App;
