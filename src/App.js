@@ -1,23 +1,38 @@
-import logo from './logo.svg';
 import './App.css';
+import BillAmount from './components/BillAmount';
+import YourService from './components/YourService';
+import FriendService from './components/FriendService';
+import TotalPay from './components/TotalPay';
+import ResetButton from './components/ResetButton';
+import { useState } from 'react';
 
 function App() {
+  const [billAmount, setBillAmount] = useState(0);
+  const [yourServiceQuality, setYourServiceQuality] = useState(0);
+  const [friendServiceQuality, setFriendServiceQuality] = useState(0);
+  const [totalPayAmount, setTotalPayAmount] = useState(0);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BillAmount billAmount={billAmount} setBillAmount={setBillAmount} />
+      <YourService
+        yourServiceQuality={yourServiceQuality}
+        setYourServiceQuality={setYourServiceQuality}
+      />
+      <FriendService
+        friendServiceQuality={friendServiceQuality}
+        setFriendServiceQuality={setFriendServiceQuality}
+      />
+      <TotalPay
+        totalPayAmount={totalPayAmount}
+        setTotalPayAmount={setTotalPayAmount}
+      />
+      <ResetButton
+        setBillAmount={setBillAmount}
+        setYourServiceQuality={setYourServiceQuality}
+        setFriendServiceQuality={setFriendServiceQuality}
+        setTotalPayAmount={setTotalPayAmount}
+      />
     </div>
   );
 }
